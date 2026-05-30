@@ -1,5 +1,5 @@
 'use client';
-
+export const runtime = 'edge';
 import { mockNovels } from '@/lib/mock-data';
 import { use, useState } from 'react';
 import { ChevronLeft, ChevronRight, Settings, BookOpen, Home } from 'lucide-react';

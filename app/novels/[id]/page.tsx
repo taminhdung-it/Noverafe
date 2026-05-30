@@ -1,5 +1,5 @@
 'use client';
-
+export const runtime = 'edge';
 import { mockNovels, mockAuthors } from '@/lib/mock-data';
 import { use, useState } from 'react';
 import {
@@ -38,12 +38,12 @@ export default function NovelDetailPage({
       {/* Header with Cover */}
       <div className="relative">
         {/* Background Blur */}
-        <div className="absolute inset-0 h-96 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 h-96 bg-linear-to-b from-slate-900 to-transparent pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Cover Image */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
                 <img
                   src={novel.cover}
@@ -158,7 +158,7 @@ export default function NovelDetailPage({
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href={`/reading/novel/${novel.id}/1`}>
-                  <button className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
+                  <button className="flex-1 px-6 py-3 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
                     <BookOpen size={20} />
                     Start Reading
                   </button>
@@ -203,7 +203,7 @@ export default function NovelDetailPage({
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
               {activeTab === tab && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-purple-500 to-pink-500" />
               )}
             </button>
           ))}
@@ -300,7 +300,7 @@ export default function NovelDetailPage({
                 className="w-full bg-slate-900 text-white rounded-lg p-3 border border-slate-700 focus:border-purple-500 focus:outline-none resize-none"
                 rows={3}
               />
-              <button className="mt-3 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+              <button className="mt-3 px-4 py-2 bg-linear-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
                 Post Comment
               </button>
             </div>

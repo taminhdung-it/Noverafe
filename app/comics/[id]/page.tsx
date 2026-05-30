@@ -1,5 +1,5 @@
 'use client';
-
+export const runtime = 'edge';
 import { mockComics } from '@/lib/mock-data';
 import { use, useState } from 'react';
 import {
@@ -37,12 +37,12 @@ export default function ComicDetailPage({
       {/* Header with Cover */}
       <div className="relative">
         {/* Background Blur */}
-        <div className="absolute inset-0 h-96 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 h-96 bg-linear-to-b from-slate-900 to-transparent pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Cover Image */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
                 <img
                   src={comic.cover}
@@ -157,7 +157,7 @@ export default function ComicDetailPage({
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href={`/reading/comic/${comic.id}/1`}>
-                  <button className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
+                  <button className="flex-1 px-6 py-3 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2">
                     <Play size={20} className="fill-white" />
                     Start Reading
                   </button>
@@ -202,7 +202,7 @@ export default function ComicDetailPage({
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
               {activeTab === tab && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-purple-500 to-pink-500" />
               )}
             </button>
           ))}
@@ -219,10 +219,10 @@ export default function ComicDetailPage({
                 >
                   <div className="group relative rounded-lg overflow-hidden bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-all cursor-pointer h-40">
                     {/* Placeholder Episode Image */}
-                    <div className="w-full h-full bg-gradient-to-br from-purple-900/50 to-pink-900/50 flex items-center justify-center">
+                    <div className="w-full h-full bg-linear-to-br from-purple-900/50 to-pink-900/50 flex items-center justify-center">
                       <Play className="fill-white text-white opacity-50" size={40} />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
                       <h3 className="font-semibold text-white text-sm">
                         Ep {chapter.number}: {chapter.title}
                       </h3>
@@ -290,7 +290,7 @@ export default function ComicDetailPage({
                 className="w-full bg-slate-900 text-white rounded-lg p-3 border border-slate-700 focus:border-purple-500 focus:outline-none resize-none"
                 rows={3}
               />
-              <button className="mt-3 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+              <button className="mt-3 px-4 py-2 bg-linear-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
                 Post Comment
               </button>
             </div>

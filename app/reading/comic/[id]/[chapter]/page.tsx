@@ -1,5 +1,5 @@
 'use client';
-
+export const runtime = 'edge';
 import { mockComics } from '@/lib/mock-data';
 import { use, useState } from 'react';
 import { ChevronLeft, ChevronRight, Settings, ZoomIn, ZoomOut, Home } from 'lucide-react';
